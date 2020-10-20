@@ -1,0 +1,23 @@
+.mat-card{
+  width: 90%;
+  align-items: center;
+}
+.mat-card-content{
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.cat-edit-form, .cat-edit-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-edit-wrapper{
+  padding: 20px 0;
+  align-items: center;
+}
+
+.file-picker {
+  max-width: 200px;
+  margin: 0 0 15px 0;
+}

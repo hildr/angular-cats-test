@@ -1,0 +1,23 @@
+<div class="cat-edit-wrapper">
+  <mat-card>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="cat-edit-form">
+          <mat-form-field>
+            <input matInput placeholder="Name" id="name" [(ngModel)]="cat.name" name="name" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Image link" id="image" [(ngModel)]="cat.img" name="img" required>
+          </mat-form-field>
+          <input hidden id="filePicker" (change)="handleFilePick($event)" type="file" />
+          <label for="filePicker" class="mat-button mat-raised-button mat-primary file-picker">Choose Image</label>
+          <mat-form-field>
+            <textarea rows="5" matInput placeholder="Description" id="description" [(ngModel)]="cat.description"
+                      name="description" required></textarea>
+          </mat-form-field>
+          <button type="submit" mat-raised-button  color="primary" [disabled]="!myForm.valid">{{cat._id ? 'Save' : 'Create'}}</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+<div class="cats-wrapp">
+  <mat-card *ngFor="let cat of cats">
+    <mat-card-header [routerLink]="['/cat', cat._id]">
+      <mat-card-title>{{cat._id}} {{cat.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="cat.img" [title]="cat.description"
+         [routerLink]="['/cat', cat._id]">
+    <mat-card-content>
+      <p>{{cat.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="buttons-likes">
+        <button mat-icon-button (click)="toggleLike(cat._id)">
+          <mat-icon>thumb_up</mat-icon>
+        </button>
+        <div>{{cat.like}}</div>
+        <button mat-icon-button (click)="toggleLike(cat._id, false)">
+          <mat-icon>thumb_down</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  <button mat-fab color="primary" aria-label="Create cat" routerLink="/cats/create">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

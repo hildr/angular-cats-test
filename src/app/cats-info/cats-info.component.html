@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{cat._id}} {{cat.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [routerLink]="['/cats', 'edit', cat._id]">Edit</button>
+    <button mat-raised-button color="warn" (click)="onRemoveClick()">Remove</button>
+  </mat-card-actions>
+  <img mat-card-image [src]="cat.img" [title]="cat.description">
+  <mat-card-content>
+    <p>{{cat.description}}</p>
+  </mat-card-content>
+</mat-card>
